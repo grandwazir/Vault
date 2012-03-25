@@ -43,6 +43,7 @@ import net.milkbowl.vault.economy.plugins.Economy_Craftconomy;
 import net.milkbowl.vault.economy.plugins.Economy_CurrencyCore;
 import net.milkbowl.vault.economy.plugins.Economy_EconXP;
 import net.milkbowl.vault.economy.plugins.Economy_Essentials;
+import net.milkbowl.vault.economy.plugins.Economy_Exchequer;
 import net.milkbowl.vault.economy.plugins.Economy_McMoney;
 import net.milkbowl.vault.economy.plugins.Economy_MineConomy;
 import net.milkbowl.vault.economy.plugins.Economy_MultiCurrency;
@@ -326,6 +327,13 @@ public class Vault extends JavaPlugin {
             Economy econ = new Economy_EconXP(this);
             sm.register(Economy.class, econ, this, ServicePriority.Normal);
             log.info(String.format("[%s][Economy] EconXP found: %s", getDescription().getName(), econ.isEnabled() ? "Loaded" : "Waiting"));
+        }
+        
+        // Try to load Exchequer
+        if (packageExists("name.richardson.james.bukkit.Exchequer")) {
+            Economy econ = new Economy_Exchequer(this);
+            sm.register(Economy.class, econ, this, ServicePriority.Normal);
+            log.info(String.format("[%s][Economy] Exchequer found: %s", getDescription().getName(), econ.isEnabled() ? "Loaded" : "Waiting"));
         }
     }
 
