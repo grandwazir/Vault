@@ -330,7 +330,7 @@ public class Vault extends JavaPlugin {
         }
         
         // Try to load Exchequer
-        if (packageExists("name.richardson.james.bukkit.Exchequer")) {
+        if (packageExists("name.richardson.james.bukkit.exchequer")) {
             Economy econ = new Economy_Exchequer(this);
             sm.register(Economy.class, econ, this, ServicePriority.Normal);
             log.info(String.format("[%s][Economy] Exchequer found: %s", getDescription().getName(), econ.isEnabled() ? "Loaded" : "Waiting"));

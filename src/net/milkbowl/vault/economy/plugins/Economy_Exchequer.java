@@ -43,7 +43,7 @@ public class Economy_Exchequer implements Economy {
     // Load Plugin in case it was loaded before
     if(instance == null) {
         Plugin exchequerPlugin = plugin.getServer().getPluginManager().getPlugin(name);
-        if(exchequerPlugin != null && exchequerPlugin.getClass().getName().equals("name.richardson.james.bukkit.Exchequer")) {
+        if(exchequerPlugin != null && exchequerPlugin.getClass().getName().equals("name.richardson.james.bukkit.exchequer")) {
             this.instance = (Exchequer) exchequerPlugin;
             log.info(String.format("[%s][Economy] %s hooked.", plugin.getDescription().getName(), name));  
         }
@@ -62,7 +62,7 @@ public class Economy_Exchequer implements Economy {
         if (economy.plugin == null) {
             Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin(name);
 
-            if (plugin != null && plugin.isEnabled() && plugin.getClass().getName().equals("name.richardson.james.bukkit.Exchequer")) {
+            if (plugin != null && plugin.isEnabled() && plugin.getClass().getName().equals("name.richardson.james.bukkit.exchequer")) {
                 economy.instance = (Exchequer) plugin;
                 economy.handler = economy.instance.getHandler(Economy_Exchequer.class);
                 log.info(String.format("[%s][Economy] %s hooked.", plugin.getDescription().getName(), name));
